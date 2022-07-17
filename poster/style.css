@@ -1,9 +1,21 @@
 :root {
-  --light-grey: #f0ebe0;
+  --light-grey: #faf3e6;
   --almost-black: #010a0b;
   --light-navy-blue: #003f69;
   --faded-orange: #fb9a4b;
   --orangey-red: #df2006;
   --medium-grey: #86847f;
   --font-color: #2e383b;
+}
+
+body {
+  background-color: var(--medium-grey);
+  overflow-x: hidden;
+}
+
+.outer-square {
+  height: 700px;
+  width: 700px;
+  transform: rotate(45deg) translate(0%, -2%);
+  background-color: var(--light-grey);
 }
