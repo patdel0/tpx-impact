@@ -6,6 +6,7 @@
   --orangey-red: #df2006;
   --medium-grey: #86847f;
   --font-color: #2e383b;
+  --inner-square-size: 15px;
 }
 
 body {
@@ -13,9 +14,40 @@ body {
   overflow-x: hidden;
 }
 
+.almost-black {
+  background-color: var(--almost-black);
+}
+
+.light-navy-blue {
+  background-color: var(--light-navy-blue);
+}
+
+.faded-orange {
+  background-color: var(--faded-orange);
+}
+
+.orangey-red {
+  background-color: var(--orangey-red);
+}
+
 .outer-square {
   height: 700px;
   width: 700px;
   transform: rotate(45deg) translate(0%, -2%);
   background-color: var(--light-grey);
+}
+
+.pattern__container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  height: 250px;
+}
+
+.pattern__square {
+  height: var(--inner-square-size);
+  width: var(--inner-square-size);
 }
