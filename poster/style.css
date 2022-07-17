@@ -41,13 +41,15 @@ body {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  position: absolute;
-  top: 45%;
-  left: 50%;
   height: 250px;
 }
-
 .pattern__square {
   height: var(--inner-square-size);
   width: var(--inner-square-size);
+}
+
+#row-1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
 }
