@@ -1,0 +1,9 @@
+☐ Add functionality to display time
+    ☐ Increase time value every 10ms [1 centisecond]
+    ☐ Correctly format time based on time intervals [hh:mm:ss:cc]
+    ☐ Add padding '0' if interval length is 1
+☐ Start Button
+☐ Reset Button
+☐ Lap section
+☐ Lap Button
+☐ Add styling
