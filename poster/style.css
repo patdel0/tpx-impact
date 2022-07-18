@@ -6,12 +6,19 @@
   --orangey-red: #df2006;
   --medium-grey: #86847f;
   --font-color: #2e383b;
-  --inner-square-size: 15px;
+  --inner-square-size: 17px;
 }
 
-body {
-  background-color: var(--medium-grey);
+main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  max-width: 700px;
+  min-width: 700px;
+  height: 930px;
+  margin: auto;
   overflow-x: hidden;
+  background-color: var(--medium-grey);
 }
 
 .almost-black {
@@ -30,10 +37,22 @@ body {
   background-color: var(--orangey-red);
 }
 
+.text {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 138px;
+  transform: rotate(-45deg) translate(30%, 60%);
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: var(--font-color);
+}
+
 .outer-square {
   height: 700px;
   width: 700px;
-  transform: rotate(45deg) translate(0%, -2%);
+  transform: rotate(45deg) translate(0%, -5%);
   background-color: var(--light-grey);
 }
 
