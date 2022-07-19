@@ -17,6 +17,7 @@ const timeEl = document.querySelector(".time");
 const lapTimeEl = document.querySelector(".lap-time");
 const startBtn = document.querySelector("#start-stop");
 const resetBtn = document.querySelector("#reset");
+const lapBtn = document.querySelector(".lap-btn");
 const lapList = document.querySelector(".laps");
 
 startBtn.addEventListener("click", startOrStop);
@@ -54,12 +55,12 @@ function resetAll() {
   resetLap();
 
   totalTimeInCentiseconds = 0;
-  timeEl.textContent = `00:00:00:00`;
+  clearTime(timeEl);
 }
 
 function resetLap() {
   lapTimeInCentiseconds = 0;
-  lapTimeEl.textContent = `00:00:00:00`;
+  clearTime(lapTimeEl);
 }
 
 // Helper functions
@@ -77,4 +78,8 @@ function printTime(timeInCentiseconds, element) {
 
 function addPadding(val) {
   return val < 10 ? "0" + val : val;
+}
+
+function clearTime(element) {
+  element.textContent = `00:00:00:00`;
 }

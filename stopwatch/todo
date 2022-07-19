@@ -8,5 +8,9 @@
 ✔ Lap section @done(22-07-19 17:27)
     ✔ Add lap list container @done(22-07-19 17:18)
     ✔ Display lap timer @done(22-07-19 17:27)
-☐ Lap Button
+☐ Lap functionality
+    ✔ Add button @done(22-07-19 20:07)
+    ☐ Save lap to localStorage and reset lap timer
+    ☐ Render laps from localStorage 
+    ☐ Reset localStorage
 ☐ Add styling
