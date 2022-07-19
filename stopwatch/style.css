@@ -25,6 +25,11 @@ main {
   font-family: digital;
 }
 
+.total,
+.lap {
+  user-select: none;
+}
+
 .total {
   font-size: clamp(2rem, 15vw, 5rem);
 }
@@ -65,7 +70,7 @@ main {
 .btn--inactive {
   background-color: transparent !important;
   border: 1px solid black;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 
 #start-stop {
