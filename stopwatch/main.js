@@ -11,10 +11,13 @@ let isRunning = false;
 let timeInCentiseconds = 0;
 let stopwatchInterval;
 
+// DOM variables
 const timeEl = document.querySelector(".time");
 const startBtn = document.querySelector("#start-stop");
+const resetBtn = document.querySelector("#reset");
 
 startBtn.addEventListener("click", startOrStop);
+resetBtn.addEventListener("click", reset);
 
 function startOrStop() {
   startBtn.classList.toggle("start");
@@ -39,6 +42,13 @@ function stop() {
   startBtn.textContent = "Start";
 }
 
+function reset() {
+  stop();
+  timeInCentiseconds = 0;
+  timeEl.textContent = `00:00:00:00`;
+}
+
+// Helper functions
 function printTime(timeInCentiseconds) {
   const centiseconds = timeInCentiseconds % csInOneSecond;
   const seconds =
