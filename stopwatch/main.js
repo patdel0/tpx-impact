@@ -17,11 +17,12 @@ const timeEl = document.querySelector(".time");
 const lapTimeEl = document.querySelector(".lap-time");
 const startBtn = document.querySelector("#start-stop");
 const resetBtn = document.querySelector("#reset");
-const lapBtn = document.querySelector(".lap-btn");
+const lapBtn = document.querySelector("#lap-btn");
 const lapList = document.querySelector(".laps");
 
 startBtn.addEventListener("click", startOrStop);
 resetBtn.addEventListener("click", resetAll);
+lapBtn.addEventListener("click", saveLap);
 
 function startOrStop() {
   startBtn.classList.toggle("start");
@@ -61,6 +62,18 @@ function resetAll() {
 function resetLap() {
   lapTimeInCentiseconds = 0;
   clearTime(lapTimeEl);
+}
+
+function saveLap() {
+  saveToLocalStorage();
+  resetLap();
+}
+
+function saveToLocalStorage() {
+  const savedLaps = localStorage.laps ? JSON.parse(localStorage.laps) : [];
+  savedLaps.push(lapTimeEl.textContent);
+  localStorage.setItem("laps", JSON.stringify(savedLaps));
+  console.log(localStorage.laps);
 }
 
 // Helper functions
