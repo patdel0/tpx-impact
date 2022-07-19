@@ -4,7 +4,9 @@
     ✔ Add padding '0' if value is less than 10 @done(22-07-19 13:38)
 ✔ Start Button @done(22-07-19 16:51)
 ✔ Stop Button @done(22-07-19 16:51)
-☐ Reset Button
+✔ Reset Button @done(22-07-19 17:06)
 ☐ Lap section
+    ✔ Add lap list container @done(22-07-19 17:18)
+    ☐ Display lap timer
 ☐ Lap Button
 ☐ Add styling

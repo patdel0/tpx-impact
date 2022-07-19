@@ -15,6 +15,7 @@ let stopwatchInterval;
 const timeEl = document.querySelector(".time");
 const startBtn = document.querySelector("#start-stop");
 const resetBtn = document.querySelector("#reset");
+const lapList = document.querySelector(".laps");
 
 startBtn.addEventListener("click", startOrStop);
 resetBtn.addEventListener("click", reset);
