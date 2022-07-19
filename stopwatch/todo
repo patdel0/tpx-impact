@@ -10,7 +10,7 @@
     ✔ Display lap timer @done(22-07-19 17:27)
 ☐ Lap functionality
     ✔ Add button @done(22-07-19 20:07)
-    ☐ Save lap to localStorage and reset lap timer
-    ☐ Render laps from localStorage 
-    ☐ Reset localStorage
+    ✔ Save lap to localStorage and reset lap timer @done(22-07-19 20:17)
+    ✔ Render laps from localStorage @done(22-07-19 20:26)
+    ✔ Reset localStorage @done(22-07-19 20:26)
 ☐ Add styling
