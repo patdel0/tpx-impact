@@ -2,7 +2,8 @@
     ✔ Increase time value every 10ms [1 centisecond] @done(22-07-19 13:38)
     ✔ Correctly format time based on time intervals [hh:mm:ss:cc] @done(22-07-19 13:38)
     ✔ Add padding '0' if value is less than 10 @done(22-07-19 13:38)
-☐ Start Button
+✔ Start Button @done(22-07-19 16:51)
+✔ Stop Button @done(22-07-19 16:51)
 ☐ Reset Button
 ☐ Lap section
 ☐ Lap Button

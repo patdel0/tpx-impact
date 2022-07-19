@@ -7,26 +7,36 @@ const secondsInOneMinute = 60;
 const minutesInOneHour = 60;
 
 // Stopwatch state
+let isRunning = false;
 let timeInCentiseconds = 0;
 let stopwatchInterval;
 
 const timeEl = document.querySelector(".time");
-const startBtn = document.querySelector("#start");
-const stopBtn = document.querySelector("#stop");
+const startBtn = document.querySelector("#start-stop");
 
-startBtn.addEventListener("click", start);
-stopBtn.addEventListener("click", stop);
+startBtn.addEventListener("click", startOrStop);
+
+function startOrStop() {
+  startBtn.classList.toggle("start");
+
+  if (isRunning) return stop();
+  start();
+}
 
 function start() {
   stopwatchInterval = setInterval(() => {
     timeInCentiseconds += 1;
     printTime(timeInCentiseconds);
   }, msInOneCentisecond);
+  isRunning = true;
+  startBtn.textContent = "Pause";
 }
 
 function stop() {
   clearInterval(stopwatchInterval);
   stopwatchInterval = null;
+  isRunning = false;
+  startBtn.textContent = "Start";
 }
 
 function printTime(timeInCentiseconds) {
