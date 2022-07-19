@@ -13,19 +13,22 @@ let lapTimeInCentiseconds = 0;
 let stopwatchInterval;
 
 // DOM variables
-const timeEl = document.querySelector(".time");
-const lapTimeEl = document.querySelector(".lap-time");
+const timeEl = document.querySelector(".total");
+const lapTimeEl = document.querySelector(".lap");
 const startBtn = document.querySelector("#start-stop");
 const resetBtn = document.querySelector("#reset");
 const lapBtn = document.querySelector("#lap-btn");
 const lapsList = document.querySelector(".laps");
+
+renderSavedLaps();
 
 startBtn.addEventListener("click", startOrStop);
 resetBtn.addEventListener("click", resetAll);
 lapBtn.addEventListener("click", saveLap);
 
 function startOrStop() {
-  startBtn.classList.toggle("start");
+  startBtn.classList.toggle("btn--started");
+  lapBtn.classList.toggle("btn--inactive");
 
   if (isRunning) return stop();
   start();
@@ -66,6 +69,8 @@ function resetLapTime() {
 }
 
 function saveLap() {
+  if (!isRunning) return;
+
   saveToLocalStorage();
   resetLapTime();
   renderSavedLaps();
@@ -79,13 +84,13 @@ function saveToLocalStorage() {
 
 function renderSavedLaps() {
   clearInnerHTML(lapsList);
-  const savedLaps = JSON.parse(localStorage.laps);
+  const savedLaps = localStorage.laps ? JSON.parse(localStorage.laps) : [];
   savedLaps.forEach(renderLap);
 }
 
 function renderLap(lapTime) {
   const newLi = document.createElement("li");
-  newLi.classList.add("laps__item");
+  newLi.classList.add("laps__item", "time");
   newLi.textContent = lapTime;
   lapsList.append(newLi);
 }

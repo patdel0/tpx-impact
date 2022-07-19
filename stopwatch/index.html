@@ -9,12 +9,16 @@
     <title>Stopwatch</title>
   </head>
   <body>
-    <p class="time">00:00:00:00</p>
-    <p class="lap-time">00:00:00:00</p>
-    <button class="btn" id="start-stop">Start</button>
-    <button class="btn" id="lap-btn">Lap</button>
-    <button class="btn" id="reset">Reset</button>
-    <ul class="laps"></ul>
+    <main>
+      <p class="time lap">00:00:00:00</p>
+      <p class="time total">00:00:00:00</p>
+      <div class="buttons">
+        <button class="btn" id="start-stop">Start</button>
+        <button class="btn btn--inactive" id="lap-btn">Lap</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+      <ul class="laps"></ul>
+    </main>
     <script src="./main.js"></script>
   </body>
 </html>
