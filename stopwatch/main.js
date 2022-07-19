@@ -1,23 +1,32 @@
-// 00:00:00:00
-// 1 centisecond - 10ms
-// 1 second - 1000ms
-// 1 minute - 60000ms
-// 1 hour - 3.6e+6ms
+// Time constants
+const msInOneCentisecond = 10;
+const csInOneSecond = 100;
+const csInOneMinute = 6000;
+const csInOneHour = 360000;
+const secondsInOneMinute = 60;
+const minutesInOneHour = 60;
+
+const timeEl = document.querySelector(".time");
+
 let timeInCentiseconds = 0;
 
 setInterval(() => {
-  timeInCentiseconds += 10;
+  timeInCentiseconds += 1;
   printTime(timeInCentiseconds);
-}, 10);
+}, msInOneCentisecond);
 
 function printTime(timeInCentiseconds) {
-  let centiseconds = timeInCentiseconds / 100;
-  let seconds = (centiseconds / 100) % 60;
-  let minutes = parseInt(seconds / 60) % 60;
-  let hours = parseInt(seconds / 3600);
+  const centiseconds = timeInCentiseconds % csInOneSecond;
+  const seconds =
+    parseInt(timeInCentiseconds / csInOneSecond) % secondsInOneMinute;
+  const minutes =
+    parseInt(timeInCentiseconds / csInOneMinute) % minutesInOneHour;
+  const hours = parseInt(timeInCentiseconds / csInOneHour);
+  const timeArr = [hours, minutes, seconds, centiseconds];
 
-  
+  timeEl.textContent = timeArr.map((item) => addPadding(item)).join(":");
 }
+
 function addPadding(val) {
   return val < 10 ? "0" + val : val;
 }
