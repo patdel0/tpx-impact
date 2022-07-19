@@ -12,14 +12,21 @@ let stopwatchInterval;
 
 const timeEl = document.querySelector(".time");
 const startBtn = document.querySelector("#start");
+const stopBtn = document.querySelector("#stop");
 
 startBtn.addEventListener("click", start);
+stopBtn.addEventListener("click", stop);
 
 function start() {
   stopwatchInterval = setInterval(() => {
     timeInCentiseconds += 1;
     printTime(timeInCentiseconds);
   }, msInOneCentisecond);
+}
+
+function stop() {
+  clearInterval(stopwatchInterval);
+  stopwatchInterval = null;
 }
 
 function printTime(timeInCentiseconds) {
