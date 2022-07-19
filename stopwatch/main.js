@@ -8,17 +8,19 @@ const minutesInOneHour = 60;
 
 // Stopwatch state
 let isRunning = false;
-let timeInCentiseconds = 0;
+let totalTimeInCentiseconds = 0;
+let lapTimeInCentiseconds = 0;
 let stopwatchInterval;
 
 // DOM variables
 const timeEl = document.querySelector(".time");
+const lapTimeEl = document.querySelector(".lap-time");
 const startBtn = document.querySelector("#start-stop");
 const resetBtn = document.querySelector("#reset");
 const lapList = document.querySelector(".laps");
 
 startBtn.addEventListener("click", startOrStop);
-resetBtn.addEventListener("click", reset);
+resetBtn.addEventListener("click", resetAll);
 
 function startOrStop() {
   startBtn.classList.toggle("start");
@@ -29,9 +31,13 @@ function startOrStop() {
 
 function start() {
   stopwatchInterval = setInterval(() => {
-    timeInCentiseconds += 1;
-    printTime(timeInCentiseconds);
+    totalTimeInCentiseconds += 1;
+    printTime(totalTimeInCentiseconds, timeEl);
+
+    lapTimeInCentiseconds += 1;
+    printTime(lapTimeInCentiseconds, lapTimeEl);
   }, msInOneCentisecond);
+
   isRunning = true;
   startBtn.textContent = "Pause";
 }
@@ -43,14 +49,21 @@ function stop() {
   startBtn.textContent = "Start";
 }
 
-function reset() {
+function resetAll() {
   stop();
-  timeInCentiseconds = 0;
+  resetLap();
+
+  totalTimeInCentiseconds = 0;
   timeEl.textContent = `00:00:00:00`;
 }
 
+function resetLap() {
+  lapTimeInCentiseconds = 0;
+  lapTimeEl.textContent = `00:00:00:00`;
+}
+
 // Helper functions
-function printTime(timeInCentiseconds) {
+function printTime(timeInCentiseconds, element) {
   const centiseconds = timeInCentiseconds % csInOneSecond;
   const seconds =
     parseInt(timeInCentiseconds / csInOneSecond) % secondsInOneMinute;
@@ -59,7 +72,7 @@ function printTime(timeInCentiseconds) {
   const hours = parseInt(timeInCentiseconds / csInOneHour);
   const timeArr = [hours, minutes, seconds, centiseconds];
 
-  timeEl.textContent = timeArr.map((item) => addPadding(item)).join(":");
+  element.textContent = timeArr.map((item) => addPadding(item)).join(":");
 }
 
 function addPadding(val) {
