@@ -121,10 +121,16 @@ define("ROOMS", [ROOM1, ROOM2, ROOM3, ROOM4, ROOM5]);
 
 foreach (ROOMS as $room) {
     extract(get_object_vars($room));
-    echo
-    "\n\n" . $flavourText . "\n" . $prompt . "\n\n";
+    printHeader($name);
+    echo  $flavourText . "\n" . $prompt . "\n\n";
     printChoices($choices);
     getPlayerChoice($choices);
+}
+
+function printHeader($name)
+{
+    global $health;
+    echo "\n\nHP: [" . $health . "/3]   " . $name . "\n\n";
 }
 
 function printChoices($choices)
@@ -140,13 +146,13 @@ function getPlayerChoice($choices)
 {
 
     $playerInput = readline('What will you do?[1/2] ');
-    $selectedChoice = $choices[intval($playerInput) - 1]; // -1 to match $choices index
 
-    if (!isset($selectedChoice)) {
+    if (!isset($choices[intval($playerInput) - 1])) {
         echo "Please select 1 or 2 \n\n";
         return getPlayerChoice($choices);
     }
 
+    $selectedChoice = $choices[intval($playerInput) - 1]; // -1 to match $choices index
 
     echo $selectedChoice->outcome . "\n";
 

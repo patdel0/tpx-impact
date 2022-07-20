@@ -29,6 +29,9 @@
     ✔ Print choice->outcome @done(22-07-20 15:47)
     ✔ Create Health @done(22-07-20 15:56)
         ✔ Subtract health based on player's choice @done(22-07-20 15:56)
-    ☐ Print room header
-        ☐ Add player's hearts  
-        ☐ Add room name
+    ✔ Print room header @done(22-07-20 19:13)
+        ✔ Add player's hearts @done(22-07-20 19:13)
+        ✔ Add room name @done(22-07-20 19:13)
+☐ Handle Game Over
+    ☐ Print game over msg
+    ☐ Allow user to restart the game if wanted
