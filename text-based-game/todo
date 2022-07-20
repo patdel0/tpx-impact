@@ -11,4 +11,10 @@
         echo/print
     ✔ Require user input @done(22-07-20 08:54)
         readline(str)
+    ✔ Naming conventions @done(22-07-20 08:58)
+        class UpperCammelCase
+        constants UPPER_CASE
+        variables cammelCase
+    ✔ Create constants @done(22-07-20 08:59)
+        define('name', value)
 
