@@ -24,7 +24,7 @@
 ☐ Loop through each room
     ✔ Print flavourText @done(22-07-20 09:52)
     ✔ Print prompt @done(22-07-20 09:53)
-    ☐ Print choices->name
+    ✔ Print choices->name @done(22-07-20 10:00)
     ☐ Save player's choice
     ☐ Print choice->outcome
     ☐ Create Health
