@@ -35,7 +35,10 @@
     ✔ Destructure object @done(22-07-20 19:51)
         extract(get_object_vars($object));
         use $property diretly
-        
+    
+    ✔ Import module/another .php file @done(22-07-20 20:05)
+        include 'filename.php';
+
     ☐ Format log output
 
 ✔ Create ROOMS arr @done(22-07-20 09:51)
