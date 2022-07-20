@@ -172,11 +172,12 @@ function getPlayerChoice($choices)
 function handlePlayerChoice($playerChoice)
 {
     echo "\n" . $playerChoice->outcome . "\n";
-
+    sleep(2);
     if (isset($playerChoice->lostHealth)) {
         global $health;
         echo 'You lost ' . $playerChoice->lostHealth . ' health' . "\n\n";
         $health -= $playerChoice->lostHealth;
+        sleep(2);
     }
 }
 

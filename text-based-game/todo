@@ -18,7 +18,7 @@
     ✔ Create constants @done(22-07-20 08:59)
         define('name', value)
     ☐ Format log output
-    ☐ Set timeout
+    ✔ Set timeout @done(22-07-20 19:42)
 
 ✔ Create ROOMS arr @done(22-07-20 09:51)
     ✔ Create individual room objects, containing relevant data @done(22-07-20 09:51)
