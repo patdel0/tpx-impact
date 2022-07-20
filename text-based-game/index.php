@@ -121,8 +121,7 @@ foreach (ROOMS as $room) {
     extract(get_object_vars($room));
     echo $flavourText . "\n" . $prompt . "\n\n";
     printChoices($choices);
-
-    $playerChoice = readline('What will you do? ');
+    getPlayerChoice($choices);
 }
 
 function printChoices($choices)
@@ -132,4 +131,18 @@ function printChoices($choices)
         echo $choiceIndex . " - " . $choice->name . "\n";
         $choiceIndex += 1;
     }
+}
+
+function getPlayerChoice($choices)
+{
+
+    $playerInput = readline('What will you do? ');
+    $selectedChoice = $choices[intval($playerInput) - 1];
+
+    if (!isset($selectedChoice)) {
+        echo "Please select 1 or 2 \n\n";
+        return getPlayerChoice($choices);
+    }
+
+    echo $selectedChoice->outcome . "\n\n";
 }
