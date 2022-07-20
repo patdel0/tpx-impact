@@ -129,7 +129,7 @@ function startGame()
     foreach (ROOMS as $room) {
         extract(get_object_vars($room));
         printHeader($name);
-        echo  $flavourText . "\n" . $prompt . "\n\n";
+        printRoomText($flavourText, $prompt);
         printChoices($choices);
         $playerChoice = getPlayerChoice($choices);
         handlePlayerChoice($playerChoice);
@@ -142,14 +142,20 @@ function startGame()
 function printHeader($name)
 {
     global $health;
-    echo "\n\nHP: " . $health . "/3   " . $name . "\n\n";
+    print "\n\nHP: " . $health . "/3   " . $name . "\n\n";
+}
+
+
+function printRoomText($flavourText, $prompt)
+{
+    print  $flavourText . "\n" . $prompt . "\n\n";
 }
 
 function printChoices($choices)
 {
     $choiceIndex = 1;
     foreach ($choices as $choice) {
-        echo $choiceIndex . " - " . $choice->name . "\n";
+        print $choiceIndex . " - " . $choice->name . "\n";
         $choiceIndex += 1;
     }
 }
@@ -160,7 +166,7 @@ function getPlayerChoice($choices)
     $playerInput = readline('What will you do?[1/2] ');
 
     if (!isset($choices[intval($playerInput) - 1])) {
-        echo "Please select 1 or 2 \n\n";
+        print "Please select 1 or 2 \n\n";
         return getPlayerChoice($choices);
     }
 
@@ -171,11 +177,11 @@ function getPlayerChoice($choices)
 
 function handlePlayerChoice($playerChoice)
 {
-    echo "\n" . $playerChoice->outcome . "\n";
+    print "\n" . $playerChoice->outcome . "\n";
     sleep(2);
     if (isset($playerChoice->lostHealth)) {
         global $health;
-        echo 'You lost ' . $playerChoice->lostHealth . ' health' . "\n\n";
+        print 'You lost ' . $playerChoice->lostHealth . ' health' . "\n\n";
         $health -= $playerChoice->lostHealth;
         sleep(2);
     }
@@ -183,9 +189,9 @@ function handlePlayerChoice($playerChoice)
 
 function gameOver()
 {
-    echo "\nYou died - Game Over!\n";
+    print "\nYou died - Game Over!\n";
     $restartGame = readline("Would you like to play again?[y/n] ");
     if ($restartGame === 'y') return startGame();
 
-    echo "\n\nSee you next time";
+    print "\n\nThanks for playing. See you next time! ;)";
 }
