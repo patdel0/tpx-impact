@@ -17,4 +17,16 @@
         variables cammelCase
     ✔ Create constants @done(22-07-20 08:59)
         define('name', value)
+    ☐ Format log output
+
+✔ Create ROOMS arr @done(22-07-20 09:51)
+    ✔ Create individual room objects, containing relevant data @done(22-07-20 09:51)
+☐ Loop through each room
+    ☐ Print flavourText
+    ☐ Print prompt
+    ☐ Print choices->name
+    ☐ Save player's choice
+    ☐ Print choice->outcome
+    ☐ Create Health
+        ☐ Subtract health based on player's choice
 
