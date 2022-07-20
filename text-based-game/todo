@@ -22,8 +22,8 @@
 ✔ Create ROOMS arr @done(22-07-20 09:51)
     ✔ Create individual room objects, containing relevant data @done(22-07-20 09:51)
 ☐ Loop through each room
-    ☐ Print flavourText
-    ☐ Print prompt
+    ✔ Print flavourText @done(22-07-20 09:52)
+    ✔ Print prompt @done(22-07-20 09:53)
     ☐ Print choices->name
     ☐ Save player's choice
     ☐ Print choice->outcome

@@ -119,7 +119,7 @@ define("ROOMS", [ROOM1, ROOM2, ROOM3, ROOM4, ROOM5]);
 
 foreach (ROOMS as $room) {
     extract(get_object_vars($room));
-    echo $flavourText . "\n";
+    echo $flavourText . "\n" . $prompt . "\n";
 
     $playerChoice = readline('what will you do?');
 }
