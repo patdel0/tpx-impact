@@ -1,24 +1,42 @@
 ✔ Learn basic php @done(22-07-20 08:54)
     ✔ Create variables @done(22-07-20 08:46) 
         $variableName
+
     ✔ Loop through array @done(22-07-20 08:48) 
         foreach (arr as itemName) {}
+
     ✔ Create Objects @done(22-07-20 08:51) 
         $objName = (object) ['key' => 'value']
+
     ✔ Access property of object @done(22-07-20 08:53)
         $objName->propertyName
+
     ✔ Log @done(22-07-20 08:54)
         echo/print
+
     ✔ Require user input @done(22-07-20 08:54)
         readline(str)
+
     ✔ Naming conventions @done(22-07-20 08:58)
         class UpperCammelCase
         constants UPPER_CASE
         variables cammelCase
+
     ✔ Create constants @done(22-07-20 08:59)
         define('name', value)
-    ☐ Format log output
+
     ✔ Set timeout @done(22-07-20 19:42)
+        sleep(seconds);
+
+    ✔ Access global variables @done(22-07-20 19:51)
+        global $variable
+        use $variable
+
+    ✔ Destructure object @done(22-07-20 19:51)
+        extract(get_object_vars($object));
+        use $property diretly
+        
+    ☐ Format log output
 
 ✔ Create ROOMS arr @done(22-07-20 09:51)
     ✔ Create individual room objects, containing relevant data @done(22-07-20 09:51)
