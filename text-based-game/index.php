@@ -1,4 +1,6 @@
 <?php
+$health = 3;
+
 define(
     "ROOM1",
     (object) [
@@ -119,7 +121,8 @@ define("ROOMS", [ROOM1, ROOM2, ROOM3, ROOM4, ROOM5]);
 
 foreach (ROOMS as $room) {
     extract(get_object_vars($room));
-    echo $flavourText . "\n" . $prompt . "\n\n";
+    echo
+    "\n\n" . $flavourText . "\n" . $prompt . "\n\n";
     printChoices($choices);
     getPlayerChoice($choices);
 }
@@ -136,13 +139,20 @@ function printChoices($choices)
 function getPlayerChoice($choices)
 {
 
-    $playerInput = readline('What will you do? ');
-    $selectedChoice = $choices[intval($playerInput) - 1];
+    $playerInput = readline('What will you do?[1/2] ');
+    $selectedChoice = $choices[intval($playerInput) - 1]; // -1 to match $choices index
 
     if (!isset($selectedChoice)) {
         echo "Please select 1 or 2 \n\n";
         return getPlayerChoice($choices);
     }
 
-    echo $selectedChoice->outcome . "\n\n";
+
+    echo $selectedChoice->outcome . "\n";
+
+    if (isset($selectedChoice->lostHealth)) {
+        global $health;
+        echo 'You lost ' . $selectedChoice->lostHealth . ' health' . "\n\n";
+        $health -= $selectedChoice->lostHealth;
+    }
 }

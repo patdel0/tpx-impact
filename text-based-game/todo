@@ -27,8 +27,8 @@
     ✔ Print choices->name @done(22-07-20 10:00)
     ✔ Save player's choice @done(22-07-20 15:47)
     ✔ Print choice->outcome @done(22-07-20 15:47)
-    ☐ Create Health
-        ☐ Subtract health based on player's choice
+    ✔ Create Health @done(22-07-20 15:56)
+        ✔ Subtract health based on player's choice @done(22-07-20 15:56)
     ☐ Print room header
         ☐ Add player's hearts  
         ☐ Add room name
