@@ -18,10 +18,11 @@
     ✔ Create constants @done(22-07-20 08:59)
         define('name', value)
     ☐ Format log output
+    ☐ Set timeout
 
 ✔ Create ROOMS arr @done(22-07-20 09:51)
     ✔ Create individual room objects, containing relevant data @done(22-07-20 09:51)
-☐ Loop through each room
+✔ Loop through each room @done(22-07-20 19:14)
     ✔ Print flavourText @done(22-07-20 09:52)
     ✔ Print prompt @done(22-07-20 09:53)
     ✔ Print choices->name @done(22-07-20 10:00)
@@ -32,6 +33,6 @@
     ✔ Print room header @done(22-07-20 19:13)
         ✔ Add player's hearts @done(22-07-20 19:13)
         ✔ Add room name @done(22-07-20 19:13)
-☐ Handle Game Over
-    ☐ Print game over msg
-    ☐ Allow user to restart the game if wanted
+✔ Handle Game Over @done(22-07-20 19:36)
+    ✔ Print game over msg @done(22-07-20 19:27)
+    ✔ Allow user to restart the game if wanted @done(22-07-20 19:36)

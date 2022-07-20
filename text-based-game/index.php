@@ -119,18 +119,30 @@ define(
 
 define("ROOMS", [ROOM1, ROOM2, ROOM3, ROOM4, ROOM5]);
 
-foreach (ROOMS as $room) {
-    extract(get_object_vars($room));
-    printHeader($name);
-    echo  $flavourText . "\n" . $prompt . "\n\n";
-    printChoices($choices);
-    getPlayerChoice($choices);
+startGame();
+
+function startGame()
+{
+    global $health;
+    $health = 3;
+
+    foreach (ROOMS as $room) {
+        extract(get_object_vars($room));
+        printHeader($name);
+        echo  $flavourText . "\n" . $prompt . "\n\n";
+        printChoices($choices);
+        $playerChoice = getPlayerChoice($choices);
+        handlePlayerChoice($playerChoice);
+        if ($health <= 0) {
+            return gameOver();
+        }
+    }
 }
 
 function printHeader($name)
 {
     global $health;
-    echo "\n\nHP: [" . $health . "/3]   " . $name . "\n\n";
+    echo "\n\nHP: " . $health . "/3   " . $name . "\n\n";
 }
 
 function printChoices($choices)
@@ -152,13 +164,27 @@ function getPlayerChoice($choices)
         return getPlayerChoice($choices);
     }
 
-    $selectedChoice = $choices[intval($playerInput) - 1]; // -1 to match $choices index
+    $playerChoice = $choices[intval($playerInput) - 1];   // -1 to match $choices index   
+    return $playerChoice;
+}
 
-    echo $selectedChoice->outcome . "\n";
 
-    if (isset($selectedChoice->lostHealth)) {
+function handlePlayerChoice($playerChoice)
+{
+    echo "\n" . $playerChoice->outcome . "\n";
+
+    if (isset($playerChoice->lostHealth)) {
         global $health;
-        echo 'You lost ' . $selectedChoice->lostHealth . ' health' . "\n\n";
-        $health -= $selectedChoice->lostHealth;
+        echo 'You lost ' . $playerChoice->lostHealth . ' health' . "\n\n";
+        $health -= $playerChoice->lostHealth;
     }
+}
+
+function gameOver()
+{
+    echo "\nYou died - Game Over!\n";
+    $restartGame = readline("Would you like to play again?[y/n] ");
+    if ($restartGame === 'y') return startGame();
+
+    echo "\n\nSee you next time";
 }
