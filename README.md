@@ -14,7 +14,7 @@ In this challenge we were provided a collection of posters which we would have t
 The poster chosen was ***Musica Viva Rosbaud 1959 on Flickr - Photo Sharing!***
 
 
-## 2. [Javascript Stopwatch](https://dogwishx.github.io/tpx-impact/poster/)
+## 2. [Javascript Stopwatch](https://dogwishx.github.io/tpx-impact/stopwatch/)
 
 ![](https://i.imgur.com/25FbAK6.png)
 
