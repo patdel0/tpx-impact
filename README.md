@@ -4,17 +4,17 @@ For all these projects a Todo file was created in their respective folders, whic
 
 
 
-## 1. [Poster Recreation](https://dogwishx.github.io/tpx-impact/poster/) <a name="poster-recreation"></a>
+## 1. [Poster Recreation](https://patdel0.github.io/tpx-impact/poster/) <a name="poster-recreation"></a>
 
 ![](https://i.imgur.com/oY3iU3g.png)
 
-[Click to see live](https://dogwishx.github.io/tpx-impact/poster/)
+[Click to see live](https://patdel0.github.io/tpx-impact/poster/)
 
 In this challenge we were provided a collection of posters which we would have to replicate using only HTML and CSS.
 The poster chosen was ***Musica Viva Rosbaud 1959 on Flickr - Photo Sharing!***
 
 
-## 2. [Javascript Stopwatch](https://dogwishx.github.io/tpx-impact/stopwatch/)
+## 2. [Javascript Stopwatch](https://patdel0.github.io/tpx-impact/stopwatch/)
 
 ![](https://i.imgur.com/25FbAK6.png)
 
@@ -29,7 +29,7 @@ For this task we had to create a HTML page with a functional stopwatch. The stop
 
 This project also includes interaction with the browser's Web Storage API, saving the laps to `window.localStorage`.
 
-## 3. [PHP text-based game](https://github.com/DogwishX/tpx-impact/tree/main/text-based-game)
+## 3. [PHP text-based game](https://github.com/patdel0/tpx-impact/tree/main/text-based-game)
 
 ![](https://i.imgur.com/hBXrtFn.png)
 
@@ -62,7 +62,7 @@ Make sure you have the latest version of php installed [v8.1 at the time of writ
 
 
 ```
-git clone https://github.com/DogwishX/tpx-impact.git;
+git clone https://github.com/patdel0/tpx-impact.git;
 cd tpx-impact/text-based-game;
 php index.php
 ```
